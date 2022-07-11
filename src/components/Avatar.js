@@ -1,6 +1,6 @@
-export default function Avatar({ image, username }) {
+export default function Avatar({ image, username, className }) {
 	return (
-		<div className="rounded-full w-16">
+		<div className={`${className} rounded-full w-16`}>
 			<img src={image} alt={username} />
 		</div>
 	)
