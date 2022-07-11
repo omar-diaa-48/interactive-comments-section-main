@@ -1,3 +1,4 @@
+import ActionButtons from "./ActionButtons";
 import Avatar from "./Avatar";
 import Counter from "./Counter";
 
@@ -10,16 +11,16 @@ export default function Details({ details }) {
 					<Avatar image={details.user.image.png} user={details.user.username} />
 					<p className="ml-4 font-medium">{details.user.username}</p>
 					<p className="ml-4 flex-grow">{details.createdAt}</p>
-					<p className="hidden md:block text-moderate-blue">Reply</p>
+					<ActionButtons className="hidden md:flex" details={details} />
 				</div>
 
 				<p className="mb-4 mt-2 text-grayish-blue">{details.content}</p>
 			</div>
 
 
-			<div className="flex justify-between md:order-first md:flex-col md:mr-4 text-moderate-blue ">
+			<div className="flex justify-between items-center md:order-first md:flex-col md:mr-4 text-moderate-blue ">
 				<Counter count={details.score} />
-				<p className="md:hidden text-moderate-blue">Reply</p>
+				<ActionButtons className="flex md:hidden" details={details} />
 			</div>
 		</div>
 	)
