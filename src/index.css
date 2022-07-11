@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 .container {
-	@apply min-w-full min-h-full flex justify-center items-center bg-very-light-gray font-rubik;
+	@apply min-w-full flex justify-center items-center bg-very-light-gray font-rubik;
 }
 
 .feed {
