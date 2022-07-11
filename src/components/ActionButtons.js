@@ -1,17 +1,17 @@
 import data from "../data.json";
 
-export default function ActionButtons(props) {
+export default function ActionButtons({ className, details, handleEdit, handleReply }) {
 	return (
-		<div className={props.className}>
+		<div className={className}>
 
-			{data.currentUser.username === props.details.user.username && (
+			{data.currentUser.username === details.user.username && (
 				<p className="text-soft-red cursor-pointer">Delete</p>
 			)}
 
-			{data.currentUser.username === props.details.user.username ? (
-				<p className="text-moderate-blue cursor-pointer ml-4">Edit</p>
+			{data.currentUser.username === details.user.username ? (
+				<p className="text-moderate-blue cursor-pointer ml-4" onClick={handleEdit}>Edit</p>
 			) : (
-				<p className="text-moderate-blue cursor-pointer ml-4">Reply</p>
+				<p className="text-moderate-blue cursor-pointer ml-4" onClick={handleReply}>Reply</p>
 			)}
 
 		</div>
