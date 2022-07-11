@@ -36,7 +36,7 @@ export default function Details({ details }) {
 				</div>
 			</div>
 
-			{willReply && (<AddComment />)}
+			<AddComment className={`${willReply ? "block" : "hidden"}`} />
 		</div>
 	)
 }
