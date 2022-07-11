@@ -7,5 +7,5 @@
 }
 
 .feed {
-	@apply flex flex-col p-4 rounded shadow-md max-w-4xl;
+	@apply flex flex-col p-4 rounded max-w-4xl;
 }
