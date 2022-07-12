@@ -1,3 +1,4 @@
+import { motion } from "framer-motion";
 import { useState } from "react";
 import ActionButtons from "./ActionButtons";
 import AddComment from "./AddComment";
@@ -15,7 +16,16 @@ export default function Details({ details }) {
 	}
 
 	return (
-		<div className="flex flex-col">
+		<motion.div
+			className="flex flex-col"
+			initial={{ scale: 0, opacity: 0 }}
+			animate={{ scale: 1, opacity: 1 }}
+			transition={{
+				type: "spring",
+				stiffness: 260,
+				damping: 20
+			}}
+		>
 			<div className="flex flex-col px-4 py-2 bg-white rounded shadow-sm mt-4 mb-8 md:flex-row">
 
 				<div className="flex flex-col">
@@ -37,6 +47,6 @@ export default function Details({ details }) {
 			</div>
 
 			<AddComment className={`${willReply ? "block" : "hidden"}`} />
-		</div>
+		</motion.div>
 	)
 }
